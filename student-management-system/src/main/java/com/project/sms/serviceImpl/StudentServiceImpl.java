@@ -43,7 +43,8 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student updateStudent(Student student) {
         if (student != null) {
-            student.setAge(UtilityFunctions.calculateAge(student.getDob()));
+            student.setAge(UtilityFunctions
+                    .calculateAge(student.getDob()));
             return studentRepo.save(student);
         }
         return null;
@@ -57,7 +58,8 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student saveStudent(Student student) {
         if (student != null && student.getDob() != null)
-            student.setAge(UtilityFunctions.calculateAge(student.getDob()));
+            student.setAge(UtilityFunctions
+                    .calculateAge(student.getDob()));
         return studentRepo.save(student);
     }
 }

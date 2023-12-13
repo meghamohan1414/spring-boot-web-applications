@@ -8,13 +8,8 @@ import java.util.Date;
 public class UtilityFunctions {
 
 
-    public static Integer calculateAge(Date dob) {
+    public static Integer calculateAge(LocalDate dob) {
         LocalDate currentLocalDate = LocalDate.now();
-        LocalDate dobLocalDate = getDobAsLocalDate(dob);
-        return Period.between(dobLocalDate,currentLocalDate).getYears();
-    }
-
-    private static LocalDate getDobAsLocalDate(Date dob) {
-        return dob.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return Period.between(dob,currentLocalDate).getYears();
     }
 }
